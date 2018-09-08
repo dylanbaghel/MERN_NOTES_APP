@@ -1,0 +1,28 @@
+{
+  "name": "note-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^4.0.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.10",
+    "mongodb": "^3.1.1",
+    "mongoose": "^5.2.8",
+    "validator": "^10.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "client": "npm start --prefix client",
+    "server": "nodemon server/server.js",
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "start": "node server/server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
