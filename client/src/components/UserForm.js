@@ -92,7 +92,7 @@ class UserForm extends React.Component {
                                 </div>
                                 <div className="form-group">
                                     <input
-                                        type="text"
+                                        type="password"
                                         placeholder="Password"
                                         className={classnames('form-control', {
                                             'is-invalid': this.state.errors.password
