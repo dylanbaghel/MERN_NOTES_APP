@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const getAllNotes = () => dispatch => {
     axios
-        .get('http://localhost:4400/notes')
+        .get('https://mern-notes-app.herokuapp.com/notes')
         .then(res => {
             dispatch({
                 type: 'GET_ALL_NOTES',
@@ -15,7 +15,7 @@ const getAllNotes = () => dispatch => {
 
 const addNote = (noteData) => dispatch => {
     axios
-        .post('http://localhost:4400/notes', noteData)
+        .post('https://mern-notes-app.herokuapp.com/notes', noteData)
         .then(res => {
             dispatch({
                 type: 'ADD_NOTE',
@@ -28,7 +28,7 @@ const addNote = (noteData) => dispatch => {
 
 const removeNote = (_id) => dispatch => {
     axios   
-        .delete(`http://localhost:4400/notes/${_id}`)
+        .delete(`https://mern-notes-app.herokuapp.com/notes/${_id}`)
         .then((res) => {
             dispatch({
                 type: 'REMOVE_NOTE',
@@ -42,7 +42,7 @@ const removeNote = (_id) => dispatch => {
 
 const editNote = (_id, noteData) => dispatch => {
     axios
-        .patch(`http://localhost:4400/notes/${_id}`, noteData)
+        .patch(`https://mern-notes-app.herokuapp.com/notes/${_id}`, noteData)
         .then((res) => {
             dispatch({
                 type: 'EDIT_NOTE',

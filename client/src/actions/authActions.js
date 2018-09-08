@@ -5,7 +5,7 @@ import setErrors from './errorActions';
 
 export const registerUser = (userData, history) => dispatch => {
     axios
-        .post('http://localhost:4400/users', userData)
+        .post('https://mern-notes-app.herokuapp.com/users', userData)
         .then((res) => {
             history.push('/login');
         })
@@ -17,7 +17,7 @@ export const registerUser = (userData, history) => dispatch => {
 
 export const loginUser = (userData) => dispatch => {
     axios
-        .post('http://localhost:4400/users/login', userData)
+        .post('https://mern-notes-app.herokuapp.com/users/login', userData)
         .then(res => {
             const token = res.data.token;
             localStorage.setItem('noteToken', token);
@@ -40,7 +40,7 @@ export const setCurrentUser = decoded => {
 
 export const logoutUser = () => dispatch => {
     axios
-        .delete('http://localhost:4400/users/me/token')
+        .delete('https://mern-notes-app.herokuapp.com/users/me/token')
         .then((res) => {
             localStorage.removeItem('noteToken');
             setAuthToken(false);
